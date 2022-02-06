@@ -1,0 +1,11 @@
+@function calcRem($value) {
+    @return calc($value / 16) + rem;
+}
+
+@function calcEm($value, $fontSize) {
+    @return calc($value / $fontSize) + em;
+}
+
+@function percent($part, $value) {
+    @return calc($part / $value) * 100%;
+}

@@ -1,0 +1,93 @@
+.page {
+    // .page__catalog-cards
+    &__catalog-cards {
+        @include adaptiveValue('padding-top', 100, 30);
+        @include adaptiveValue('padding-bottom', 87, 50);
+    }
+}
+.catalog-cards {
+    // .catalog-cards__container
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    // .catalog-cards__item
+    &__item {
+        background-color: #FFF;
+        min-height: 293px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        padding: 28px 30px;
+        box-sizing: border-box;
+        background-color: #FFF;
+        background-repeat: no-repeat;
+        background-position: right 25px;
+        flex: 1 1 calc(33.333% - 30px);
+        min-width: 250px;
+        margin: calcRem(15);
+        @media (max-width: $mobile-width-only) {
+            flex: 1 1 calc(100% - calcRem(15));
+        }
+        @media (min-width: $mobile-width-only) {
+            flex: 1 0 100%;
+            margin: 0;
+        }
+    }
+}
+
+.item-card {
+    // .item-card__title
+    &__title {
+        margin: 0;
+        font-weight: 600;
+        @include adaptiveValue("font-size", 24, 18);
+        &::after {
+            content: "";
+            width: 68px;
+            height: 2px;
+            background-color: $yellowBg;
+            display: block;
+            margin: 12px 0;
+        }
+    }
+    // .item-card__item
+    &__item {
+        color: $yellowBg;
+        list-style: disc;
+        &:not(:last-child) {
+            margin-bottom: 10px
+        };
+        span {
+            color: #77746e;
+            @include adaptiveValue("font-size", 18, 16);
+            @include lineHeight(34, 18);
+            &:hover {
+                @include hover;
+            }
+        }
+    }
+    &-1 {
+        background-image: url('../img/main-block/catalog/knife1.jpg');
+        background-position: 89% 65px;
+    }
+    &-2 {
+        background-image: url('../img/main-block/catalog/knife2.jpg');
+        background-position: 89% 65px;
+    }
+    &-3 {
+        background-image: url('../img/main-block/catalog/knife3.jpg');
+        background-position: right 65px;
+    }
+    &-4 {
+        background-image: url('../img/main-block/catalog/knife4.jpg');
+        background-position: right 45px;
+    }
+    &-5 {
+        background-image: url('../img/main-block/catalog/knife5.jpg');
+        background-position: 146% 96%;
+    }
+    &-6 {
+        background-image: url('../img/main-block/catalog/knife6.jpg');
+        background-position: 99% 96%;
+    }
+}

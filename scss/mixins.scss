@@ -1,0 +1,26 @@
+@mixin fontSize ($value) {
+    font-size: calc($value / 16) + rem; 
+}
+
+@mixin lineHeight ($lineHeight, $fontSize) {
+    line-height: calc($lineHeight / $fontSize) * 100%;
+}
+
+@mixin marginUser ($margin, $fontSize) {
+    margin-right: calc($margin / $fontSize) + em; 
+}
+
+@mixin hover {
+    color: $yellowBg;
+    transition: .3s;
+    cursor: pointer;
+}
+
+@mixin adaptiveValue ($property, $startSize, $minSize) {
+    $addSize: $startSize - $minSize;
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (#{$maxWidthContainer - 320})))
+    }
+}
+

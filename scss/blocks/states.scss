@@ -1,0 +1,121 @@
+.page-states {
+    margin: calcRem(120) 0;
+}
+.states {
+	// .states__title
+	&__title {
+        font-weight: 700;
+        font-size: calcRem(30);
+        letter-spacing: 0.05em;
+        color: #141414;
+        line-height: percent(46, 30);
+        margin-bottom: calcRem(30);
+        background-color: transparent;
+    }
+
+	// .states__card
+	&__card {
+        background: #FEFEFE;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.state-card {
+    // .state-card__img
+	&__img {
+        width: 100%;
+    }
+
+    &__inner {
+        padding: calcRem(20);
+        span {
+            color: #ABABAB;
+            font-size: calcRem(16);
+        }
+    }
+    &__title {
+        margin: 0;
+        margin-bottom: calcRem(40);
+        font-size: calcRem(20);
+        &:hover {
+            &:hover {
+                @include hover;
+            }
+        }
+    }
+}
+
+.states-block {
+    display: grid;
+    grid-template-columns: repeat(4, percent(375, 1590));
+    gap: calcRem(30);
+    margin-bottom: calcRem(120);
+    @media (max-width: calcEm($desktop-width, 16)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: calcEm($tablet-width, 16)) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.states-lamps {
+    display: grid;
+    grid-template-columns: repeat(2, percent(770, 1590));
+    gap: calcRem(47);
+    @media (max-width: calcEm($desktop-width, 16)) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lamps {
+	// .lamps__card
+	&__card {
+        padding: calcRem(30);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        z-index: 1;
+        &-1 {
+            background: url('../img/main-block/main-states/lamp1.png') right bottom no-repeat;
+            background-size: contain;
+            z-index: 3;
+        }
+        &-2 {
+            background: url('../img/main-block/main-states/lamp2.png') right no-repeat;
+            background-size: contain;
+        }
+    }
+
+		// .lamps__title
+		&__title {
+            font-weight: 600;
+            font-size: calcRem(24);
+            line-height: 116%;
+            margin: 0;
+            &::after {
+                content: "";
+                width: 68px;
+                height: 2px;
+                background-color: #E8AA31;
+                display: block;
+                margin-top: calcRem(15);
+            }
+        }
+
+		// .lamps__desc
+		&__desc {
+            font-size: calcRem(18);
+            line-height: 123%;
+            margin-top: calcRem(34);
+        }
+
+		// .lamps__btn
+
+		&__btn {
+            margin-top: calcRem(46);
+            font-size: calcRem(18);
+            font-weight: 600;
+            line-height: 210%;
+            max-width: 100%;
+        }
+}
+

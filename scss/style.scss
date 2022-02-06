@@ -1,0 +1,92 @@
+@import "../fonts/font.scss";
+@import "functions.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "./blocks/header.scss";
+@import "./blocks/main-page.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/bestseller.scss";
+@import "./blocks/states.scss";
+@import "./blocks/footer.scss";
+
+
+body {
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif, "icons";
+    @include fontSize(18);
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+    font-family: inherit;
+	text-decoration: none;
+    color: inherit;
+}
+ul, ol, li {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1590px;
+    margin: 0 auto;
+    padding: 0 calcRem(10);
+}
+
+.btn {
+    font-family: "Montserrat", sans-serif, "icons";
+    box-sizing: border-box;
+    border: none;
+    min-height: 50px;
+    align-items: center;
+    padding: calcRem(8) calcRem(40);
+    color: #FFF;
+    text-align: center;
+    background: $yellowBg;
+    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+    border-radius: 3px;
+    display: inline-block;
+    transition: box-shadow .3s ease 0;
+    @include lineHeight(32, 20);
+    &:hover {
+        box-shadow: 0px 4px 25px rgba(232, 170, 49, 0.63);
+        cursor: pointer;
+    }
+    @media (max-width: 320px) {
+        width: 100%;
+    }
+}
+
